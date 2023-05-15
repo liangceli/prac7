@@ -7,13 +7,20 @@ int main(){
     Autocomplete * tree=new Autocomplete();
     vector<string> mytree;
 
-    tree->insert("car");
-    tree->insert("cat");
-    mytree=tree->getSuggestions("car");
-    
-    for (string s : mytree) {
-       cout << s << endl;
+    tree->insert("banana");
+    tree->insert("bandaid");
+    tree->insert("bandana");
+
+    cout << "Search " << tree->search_string("banana") << endl;
+    cout << "Search " << tree->search_string("bandaid") << endl;
+    cout << "Search " << tree->search_string("bandana") << endl;
+
+    mytree=tree->getSuggestions("b");
+    for (string& i : mytree) {  // 使用范围 for 循环遍历 vector
+        cout << i << " ";
     }
+
+    delete tree;
     return 0;
 }
 

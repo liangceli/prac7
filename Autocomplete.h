@@ -25,5 +25,7 @@ class Autocomplete{
     Autocomplete();
     vector<string> getSuggestions(string partialWord);  // return the known words that start with partialWord(输入的部分字母)
     void insert(string word); // add a word to the known words
-    //void print();
+    bool search_string(string s);
+    void DFS(TrieNode* curr_node, string& temp, vector<string>& suggestions);
+    //~Autocomplete();
 };
