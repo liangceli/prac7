@@ -100,7 +100,8 @@ vector<string> Autocomplete::getSuggestions(string partialWord) {
         char c = partialWord.at(i);
         TrieNode* child = curr_node->children[c - 'a'];
         if (child == nullptr) {
-            return suggestions; // The trie does not contain words starting with partialWord
+           // return suggestions; // The trie does not contain words starting with partialWord
+           break;
         }
         curr_node = child;
     }
